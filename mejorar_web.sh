@@ -1,3 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Instalar dependencias
+pkg update -y
+pkg install -y git imagemagick
+
+# Rutas
+REPO_DIR=~/deltha-tech.github.io
+IMG_DIR="$REPO_DIR/images"
+mkdir -p "$IMG_DIR"
+
+# Optimizar imágenes (máx 300KB)
+find "$IMG_DIR" -type f -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' | while read -r img; do
+  convert "$img" -strip -quality 85 -define jpeg:extent=300kb "$img"
+done
+
+# Crear index.html futurista
+cat > "$REPO_DIR/index.html" <<EOF
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -110,6 +128,18 @@
 
 <section class="galeria" id="galeria">
   <!-- Aquí se insertarán automáticamente las imágenes -->
+EOF
+
+# Insertar imágenes de productos
+for marca in Samsung Xiaomi iPhone Honor; do
+  find "$IMG_DIR/$marca" -type f -iname '*.jpg' -o -iname '*.png' | while read -r img; do
+    nombre=$(basename "$img")
+    echo "<div class='item $marca scroll-anim'><img src='images/$marca/$nombre' alt='$marca'></div>" >> "$REPO_DIR/index.html"
+  done
+done
+
+# Sección de servicios
+cat >> "$REPO_DIR/index.html" <<EOF
 </section>
 
 <h2 style="text-align:center;margin-top:30px;">Servicios</h2>
@@ -144,3 +174,10 @@ document.querySelectorAll('.scroll-anim').forEach(el => observer.observe(el));
 
 </body>
 </html>
+EOF
+
+# Subir a GitHub
+cd "$REPO_DIR"
+git add .
+git commit -m "Mejorando sitio web futurista con galería, animaciones y botón de WhatsApp"
+git push
