@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>DELTHA-TECH | Electrónica Futurista</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(135deg, #000000, #0f2027, #203a43, #2c5364);
+      color: #00ffe7;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    h1, h2 {
+      text-align: center;
+      text-shadow: 0 0 10px #00ffe7;
+    }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      padding: 20px;
+    }
+    .galeria img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #00ffe7;
+      transition: transform 0.3s ease;
+    }
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      box-shadow: 0 0 20px #25D366;
+      z-index: 999;
+      animation: bounce 2s infinite;
+    }
+    .whatsapp-msg {
+      position: fixed;
+      bottom: 95px;
+      right: 25px;
+      background-color: #222;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      display: none;
+    }
+    .whatsapp-btn:hover + .whatsapp-msg {
+      display: block;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <h1>DELTHA-TECH</h1>
+  <h2>Celulares y Servicios Técnicos Futuristas</h2>
+
+  <div class="galeria">
+    <img src='images/Samsung/A05.png' alt='Samsung'>
+<img src='images/Samsung/A06.jpg' alt='Samsung'>
+<img src='images/Samsung/A16.png' alt='Samsung'>
+<img src='images/Samsung/A25.png' alt='Samsung'>
+<img src='images/Samsung/A35.jpg' alt='Samsung'>
+<img src='images/Samsung/A55 .png' alt='Samsung'>
+<img src='images/Samsung/S24 ultra.jpg' alt='Samsung'>
+<img src='images/Xiaomi/13 4g.webp' alt='Xiaomi'>
+<img src='images/Xiaomi/14c.jpg' alt='Xiaomi'>
+<img src='images/Xiaomi/A3 x.jpg' alt='Xiaomi'>
+<img src='images/Xiaomi/A3.jpg' alt='Xiaomi'>
+<img src='images/Xiaomi/Note 13 pro plus.jpg' alt='Xiaomi'>
+<img src='images/Xiaomi/Note 13.png' alt='Xiaomi'>
+<img src='images/Xiaomi/Note 14.png' alt='Xiaomi'>
+<img src='images/iPhone/13.webp' alt='iPhone'>
+<img src='images/iPhone/15 pro max.png' alt='iPhone'>
+<img src='images/iPhone/15.png' alt='iPhone'>
+<img src='images/iPhone/16 pro max.jpg' alt='iPhone'>
+<img src='images/iPhone/16.jpg' alt='iPhone'>
+<img src='images/Honor/Magic 7 Lite.webp' alt='Honor'>
+<img src='images/Honor/Play 9A.jpg' alt='Honor'>
+<img src='images/Honor/X 6b.jpg' alt='Honor'>
+<img src='images/Honor/X 7b.jpg' alt='Honor'>
+<img src='images/Honor/X 8c.png' alt='Honor'>
+<img src='images/Forense/Recuperación de información 1.png' alt='Forense'>
+<img src='images/Forense/Recuperación de información 2.png' alt='Forense'>
+<img src='images/ServicioTecnico/Cambio de batería.jpg' alt='ServicioTecnico'>
+<img src='images/ServicioTecnico/Cambio de entrada.jpg' alt='ServicioTecnico'>
+<img src='images/ServicioTecnico/Cambio de glas.jpg' alt='ServicioTecnico'>
+<img src='images/ServicioTecnico/Cambio de pantalla.jpg' alt='ServicioTecnico'>
+<img src='images/ServicioTecnico/Reparación de placas.jpg' alt='ServicioTecnico'>
+<img src='images/Logos/DELTHA-TECH logo.jpg' alt='Logos'>
+<img src='images/Logos/Logo Honor.jpg' alt='Logos'>
+<img src='images/Logos/Logo Samsung.jpg' alt='Logos'>
+<img src='images/Logos/Logo Xiaomi.jpg' alt='Logos'>
+<img src='images/Logos/Logo iPhone.jpg' alt='Logos'>
+  </div>
+
+  <a class="whatsapp-btn" href="https://wa.me/51910763905" target="_blank">W</a>
+  <div class="whatsapp-msg">¿Necesitas ayuda?</div>
+</body>
+</html>
