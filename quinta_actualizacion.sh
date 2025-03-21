@@ -1,3 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "[+] Iniciando quinta actualización con solución de errores visuales..."
+
+# 1. Crear respaldo del index actual
+cp index.html index_backup_1742594655.html
+echo "[+] Respaldo de index.html creado como index_backup_1742594655.html"
+
+# 2. Reparar rutas de imágenes y extensiones con espacios
+find . -type f -name "* *" | while read file; do
+    newname=$(echo "$file" | tr -s ' ' '_')
+    mv "$file" "$newname"
+done
+
+# 3. Actualizar index.html con las imágenes y botón WhatsApp
+cat > index.html << 'EOF'
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -126,3 +142,13 @@
 
 </body>
 </html>
+EOF
+
+echo "[+] HTML actualizado con corrección de imágenes y botón WhatsApp."
+
+# 4. Subir los cambios a GitHub
+git add .
+git commit -m "Quinta actualización: solución de rutas de imágenes, botón WhatsApp y fondo con logo"
+git push
+
+echo "[+] ¡Actualización completada! Verifica en: https://deltha-tech.github.io/"
