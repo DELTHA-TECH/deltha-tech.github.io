@@ -1,138 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DELTHA-TECH</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('images/DELTHA-TECH logo.jpg') no-repeat center center fixed;
-      background-size: contain;
-      background-blend-mode: soft-light;
-      background-color: #0c0c0c;
-      color: white;
-    }
-    header {
-      text-align: center;
-      padding: 2rem;
-    }
-    header img {
-      max-width: 300px;
-      filter: drop-shadow(0 0 15px cyan);
-    }
-    section {
-      padding: 2rem;
-    }
-    h2 {
-      border-left: 4px solid cyan;
-      padding-left: 1rem;
-      color: cyan;
-    }
-    .galeria img {
-      width: 150px;
-      margin: 10px;
-      border: 2px solid cyan;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    .galeria img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px cyan;
-    }
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      padding: 15px;
-      border-radius: 50%;
-      font-size: 24px;
-      text-decoration: none;
-      box-shadow: 0 0 10px #25d366;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DELTHA-TECH | Electrónica Futurista</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
 
+<div class="fondo-animado"></div>
+
 <header>
-  <img src="images/Logo DELTHA-TECH.jpg" alt="DELTHA-TECH Logo">
-  <h1>Bienvenido a DELTHA-TECH</h1>
-  <p>Tu tienda y servicio técnico futurista</p>
+  <img src="images/Logo DELTHA-TECH.jpg" alt="DELTHA-TECH" class="logo-grande">
+  <h1 class="titulo-neon">DELTHA-TECH</h1>
 </header>
 
-<section>
-  <h2>Productos Samsung</h2>
-  <div class="galeria">
-    <img src="images/A05.png">
-    <img src="images/A06.jpg">
-    <img src="images/A16.png">
-    <img src="images/A25.png">
-    <img src="images/A35.jpg">
-    <img src="images/A55 .png">
-    <img src="images/S24 ultra.jpg">
-  </div>
+<nav class="menu">
+  <button class="btn-neon" onclick="filtrar('todos')">Todos</button>
+  <button class="btn-neon" onclick="filtrar('Samsung')">Samsung</button>
+  <button class="btn-neon" onclick="filtrar('Xiaomi')">Xiaomi</button>
+  <button class="btn-neon" onclick="filtrar('Honor')">Honor</button>
+  <button class="btn-neon" onclick="filtrar('iPhone')">iPhone</button>
+</nav>
+
+<section id="galeria" class="galeria-productos">
+  <!-- Aquí el script insertará las imágenes por marca -->
 </section>
 
-<section>
-  <h2>Productos Xiaomi</h2>
-  <div class="galeria">
-    <img src="images/13 4g.webp">
-    <img src="images/14c.jpg">
-    <img src="images/A3 x.jpg">
-    <img src="images/A3.jpg">
-    <img src="images/Note 13 pro plus.jpg">
-    <img src="images/Note 13.png">
-    <img src="images/Note 14.png">
-  </div>
+<section class="servicios">
+  <h2 class="titulo-seccion">Servicios Técnicos</h2>
+  <div class="icono-servicio">Cambio de pantalla</div>
+  <div class="icono-servicio">Cambio de batería</div>
+  <div class="icono-servicio">Cambio de entrada</div>
+  <div class="icono-servicio">Reparación de placas</div>
+  <div class="icono-servicio">Análisis Forense</div>
 </section>
 
-<section>
-  <h2>Productos Honor</h2>
-  <div class="galeria">
-    <img src="images/Magic 7 Lite.webp">
-    <img src="images/Play 9A.jpg">
-    <img src="images/X 6b.jpg">
-    <img src="images/X 7b.jpg">
-    <img src="images/X 8c.png">
-  </div>
-</section>
+<a class="whatsapp" href="https://wa.me/51910763905" target="_blank">Contáctanos por WhatsApp</a>
 
-<section>
-  <h2>Productos iPhone</h2>
-  <div class="galeria">
-    <img src="images/13.webp">
-    <img src="images/15 pro max.png">
-    <img src="images/15.png">
-    <img src="images/16 pro max.jpg">
-    <img src="images/16.jpg">
-  </div>
-</section>
-
-<section>
-  <h2>Servicios Técnicos</h2>
-  <div class="galeria">
-    <img src="images/Cambio de batería.jpg">
-    <img src="images/Cambio de entrada.jpg">
-    <img src="images/Cambio de glas.jpg">
-    <img src="images/Cambio de pantalla.jpg">
-    <img src="images/Reparación de placas.jpg">
-  </div>
-</section>
-
-<section>
-  <h2>Análisis Forense</h2>
-  <p>Recuperamos fotos, videos, documentos y datos eliminados de celulares y computadoras.</p>
-  <div class="galeria">
-    <img src="images/Recuperación de información 1.png">
-    <img src="images/Recuperación de información 2.png">
-  </div>
-</section>
-
-<a class="whatsapp-btn" href="https://wa.me/51910763905" target="_blank">W</a>
+<script src="js/filtros.js"></script>
 
 </body>
 </html>
