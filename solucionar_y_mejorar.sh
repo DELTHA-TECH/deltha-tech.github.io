@@ -1,3 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Paso 1: Crear carpetas si no existen
+mkdir -p images/{Samsung,Xiaomi,iPhone,Honor,Forense,ServicioTecnico,Logos,Otros}
+
+# Paso 2: Optimizar imágenes a <300KB
+echo "Optimizando imágenes..."
+find images/ -type f -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -exec mogrify -resize 800x800 -quality 80 -strip {} \;
+
+# Paso 3: Crear index.html futurista y responsivo
+echo "Generando index.html..."
+
+cat > index.html <<EOF
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -59,6 +72,19 @@
   <header>DELTHA-TECH</header>
 
   <div class="galeria">
+EOF
+
+# Paso 4: Insertar imágenes automáticamente en la galería
+for dir in Samsung Xiaomi iPhone Honor Forense ServicioTecnico Logos; do
+  for img in images/$dir/*; do
+    if [ -f "$img" ]; then
+      echo "    <img src=\"$img\" alt=\"$dir\">" >> index.html
+    fi
+  done
+done
+
+# Cierre del HTML
+cat >> index.html <<EOF
   </div>
 
   <div id="whatsapp">
@@ -68,3 +94,11 @@
   </div>
 </body>
 </html>
+EOF
+
+# Paso 5: Subir a GitHub
+git add .
+git commit -m "Corrigiendo errores y mejorando página futurista"
+git push
+
+echo "¡Página actualizada exitosamente con diseño futurista y galería funcional!"
