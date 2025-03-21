@@ -7,92 +7,161 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(ellipse at top, #0f0f0f, #000);
-      color: #eee;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #fff;
     }
-
     header {
+      background-color: #000;
+      padding: 20px;
       text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      box-shadow: 0 0 20px #00ffff;
+      border-bottom: 2px solid #0ff;
     }
-
     header img {
-      width: 180px;
-      max-width: 90%;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0,255,255,0.6);
-      margin-bottom: 20px;
+      height: 80px;
     }
-
-    header h1 {
-      font-size: 3em;
+    h1 {
+      font-size: 2.2rem;
+      color: #0ff;
       margin: 0;
-      color: #00ffff;
-      text-shadow: 0 0 15px #00ffff;
     }
-
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #ffffffaa;
-    }
-
     section {
       padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+      border-bottom: 1px solid #333;
     }
-
     h2 {
-      color: #00ffff;
-      border-bottom: 1px solid #00ffff33;
-      padding-bottom: 5px;
+      color: #0ff;
+      text-align: center;
       margin-bottom: 20px;
     }
-
-    .servicio {
-      margin-bottom: 20px;
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
     }
-
+    .galeria img {
+      width: 180px;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #0ff;
+      box-shadow: 0 0 10px #0ff;
+      transition: transform 0.3s ease;
+    }
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px #25D366;
+      z-index: 1000;
+    }
+    .whatsapp-btn img {
+      width: 35px;
+      height: 35px;
+    }
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 0.9em;
       background-color: #111;
-      color: #888;
-      border-top: 1px solid #222;
+      color: #999;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="img/logo.jpg" alt="Logo DELTHA-TECH" style="width: 180px; max-width: 90%; border-radius: 20px; box-shadow: 0 0 30px rgba(0,255,255,0.6); margin-bottom: 20px;">                </header>
+<header>
+  <img src="imagenes/DELTHA-TECH logo.jpg" alt="DELTHA-TECH Logo" />
+  <h1>DELTHA-TECH</h1>
+</header>
 
-  <section>
-    <h2>¿Quiénes somos?</h2>
-    <p>Somos líderes en venta de celulares y servicios técnicos avanzados. Desde los últimos modelos Samsung, Xiaomi, Honor, iPhone, hasta análisis forense digital y recuperación de datos.</p>
-  </section>
+<section>
+  <h2>Productos - Samsung</h2>
+  <div class="galeria">
+    <img src="imagenes/Samsung/A05.png" alt="Samsung A05">
+    <img src="imagenes/Samsung/A06.jpg" alt="Samsung A06">
+    <img src="imagenes/Samsung/A16.png" alt="Samsung A16">
+    <img src="imagenes/Samsung/A25.png" alt="Samsung A25">
+    <img src="imagenes/Samsung/A35.jpg" alt="Samsung A35">
+    <img src="imagenes/Samsung/A55 .png" alt="Samsung A55">
+    <img src="imagenes/Samsung/S24 ultra.jpg" alt="Samsung S24 Ultra">
+  </div>
+</section>
 
-  <section>
-    <h2>Servicios</h2>
-    <div class="servicio"><strong>Venta:</strong> iPhone, Samsung, Honor, Xiaomi.</div>
-    <div class="servicio"><strong>Servicio Técnico:</strong> Cambio de pantalla, batería, glass, entrada, flex, placa y más.</div>
-    <div class="servicio"><strong>Análisis Forense:</strong> Para celulares y computadoras.</div>
-    <div class="servicio"><strong>Recuperación de Datos:</strong> Fotos, videos y documentos importantes.</div>
-  </section>
+<section>
+  <h2>Productos - Xiaomi</h2>
+  <div class="galeria">
+    <img src="imagenes/Xiaomi/13 4g.webp">
+    <img src="imagenes/Xiaomi/14c.jpg">
+    <img src="imagenes/Xiaomi/A3 x.jpg">
+    <img src="imagenes/Xiaomi/A3.jpg">
+    <img src="imagenes/Xiaomi/Note 13 pro plus.jpg">
+    <img src="imagenes/Xiaomi/Note 13.png">
+    <img src="imagenes/Xiaomi/Note 14.png">
+  </div>
+</section>
 
-  <section>
-    <h2>Contáctanos</h2>
-    <p>WhatsApp: <a href="https://wa.me/51910763905" style="color:#00ffff">910-763-905</a> / <a href="https://wa.me/51987180885" style="color:#00ffff">987-180-885</a></p>
-  </section>
+<section>
+  <h2>Productos - Honor</h2>
+  <div class="galeria">
+    <img src="imagenes/Honor/Magic 7 Lite.webp">
+    <img src="imagenes/Honor/Play 9A.jpg">
+    <img src="imagenes/Honor/X 6b.jpg">
+    <img src="imagenes/Honor/X 7b.jpg">
+    <img src="imagenes/Honor/X 8c.png">
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 DELTHA-TECH. Todos los derechos reservados.
-  </footer>
+<section>
+  <h2>Productos - iPhone</h2>
+  <div class="galeria">
+    <img src="imagenes/iPhone/13.webp">
+    <img src="imagenes/iPhone/15 pro max.png">
+    <img src="imagenes/iPhone/15.png">
+    <img src="imagenes/iPhone/16 pro max.jpg">
+    <img src="imagenes/iPhone/16.jpg">
+  </div>
+</section>
+
+<section>
+  <h2>Servicios Técnicos</h2>
+  <div class="galeria">
+    <img src="imagenes/tecnico/Cambio de batería.jpg">
+    <img src="imagenes/tecnico/Cambio de entrada.jpg">
+    <img src="imagenes/tecnico/Cambio de glas.jpg">
+    <img src="imagenes/tecnico/Cambio de pantalla.jpg">
+    <img src="imagenes/tecnico/Reparación de placas.jpg">
+  </div>
+</section>
+
+<section>
+  <h2>Análisis Forense</h2>
+  <p style="text-align: center; max-width: 700px; margin: auto;">
+    Recuperamos fotos, videos, documentos y todo tipo de datos de celulares y computadoras dañadas o formateadas. Usamos tecnología avanzada de análisis forense digital para asegurar una recuperación profesional y segura.
+  </p>
+  <div class="galeria">
+    <img src="imagenes/forense/Recuperación de información 1.png">
+    <img src="imagenes/forense/Recuperación de información 2.png">
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 DELTHA-TECH - Todos los derechos reservados.
+</footer>
+
+<!-- Botón de WhatsApp -->
+<a class="whatsapp-btn" href="https://wa.me/51910763905" target="_blank" title="Contáctanos por WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
 </body>
 </html>
