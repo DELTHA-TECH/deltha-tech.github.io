@@ -1,53 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>DELTHA-TECH | Tecnología Futurista</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DELTHA-TECH</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(ellipse at top, #0f0f0f, #000);
+      color: #eee;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    header img {
+      width: 180px;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,255,255,0.6);
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #ffffffaa;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #00ffff;
+      border-bottom: 1px solid #00ffff33;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+
+    .servicio {
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background-color: #111;
+      color: #888;
+      border-top: 1px solid #222;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <img src="images/logo.png" alt="DELTHA-TECH Logo" class="logo">
+    <img src="img/logo.jpg" alt="Logo DELTHA-TECH" />
     <h1>DELTHA-TECH</h1>
-    <p>Tu centro profesional de tecnología, ventas y soporte técnico</p>
+    <p>Innovación. Precisión. Futuro.</p>
   </header>
 
-  <section id="productos">
-    <h2>Productos</h2>
-    <div class="galeria">
-      <img src="images/samsung-s24.jpg" alt="Samsung S24">
-      <img src="images/iphone-15.jpg" alt="iPhone 15">
-      <img src="images/xiaomi-13.jpg" alt="Xiaomi 13">
-      <img src="images/honor-x9.jpg" alt="Honor X9">
-    </div>
+  <section>
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos líderes en venta de celulares y servicios técnicos avanzados. Desde los últimos modelos Samsung, Xiaomi, Honor, iPhone, hasta análisis forense digital y recuperación de datos.</p>
   </section>
 
-  <section id="servicios">
-    <h2>Servicios Técnicos</h2>
-    <ul>
-      <li><img src="images/pantalla.jpg"> Cambio de Pantalla</li>
-      <li><img src="images/bateria.jpg"> Cambio de Batería</li>
-      <li><img src="images/glass.jpg"> Cambio de Glass</li>
-      <li><img src="images/entrada.jpg"> Cambio de Entrada</li>
-      <li><img src="images/flex.jpg"> Cambio de Flex</li>
-      <li><img src="images/protector.jpg"> Cambio de Protector</li>
-      <li><img src="images/placa.jpg"> Reparación de Placa</li>
-    </ul>
+  <section>
+    <h2>Servicios</h2>
+    <div class="servicio"><strong>Venta:</strong> iPhone, Samsung, Honor, Xiaomi.</div>
+    <div class="servicio"><strong>Servicio Técnico:</strong> Cambio de pantalla, batería, glass, entrada, flex, placa y más.</div>
+    <div class="servicio"><strong>Análisis Forense:</strong> Para celulares y computadoras.</div>
+    <div class="servicio"><strong>Recuperación de Datos:</strong> Fotos, videos y documentos importantes.</div>
   </section>
 
-  <section id="forense">
-    <h2>Análisis Forense y Recuperación</h2>
-    <ul>
-      <li><img src="images/forense.jpg"> Análisis Forense</li>
-      <li><img src="images/fotos.jpg"> Recuperación de Fotos</li>
-      <li><img src="images/videos.jpg"> Recuperación de Videos</li>
-      <li><img src="images/documentos.jpg"> Recuperación de Documentos</li>
-    </ul>
+  <section>
+    <h2>Contáctanos</h2>
+    <p>WhatsApp: <a href="https://wa.me/51910763905" style="color:#00ffff">910-763-905</a> / <a href="https://wa.me/51987180885" style="color:#00ffff">987-180-885</a></p>
   </section>
 
   <footer>
-    <p>WhatsApp: 910-763-905 | 987-180-885</p>
-    <p>&copy; 2025 DELTHA-TECH</p>
+    &copy; 2025 DELTHA-TECH. Todos los derechos reservados.
   </footer>
+
 </body>
 </html>
