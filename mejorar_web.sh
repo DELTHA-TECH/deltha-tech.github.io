@@ -181,3 +181,195 @@ cd "$REPO_DIR"
 git add .
 git commit -m "Mejorando sitio web futurista con galería, animaciones y botón de WhatsApp"
 git push
+#!/bin/bash
+
+# Instalación de dependencias necesarias
+pkg update -y && pkg install -y git imagemagick
+
+# Rutas
+IMG_DIR="images"
+OPTIMIZED_DIR="images_optimizadas"
+
+# Crear carpeta para imágenes optimizadas
+mkdir -p $OPTIMIZED_DIR
+
+# Optimizar todas las imágenes a <300KB
+find $IMG_DIR -type f -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" | while read img; do
+  filename=$(basename "$img")
+  convert "$img" -strip -resize 1280x1280\> -quality 85 "$OPTIMIZED_DIR/$filename"
+done
+
+# Reemplazar carpeta original por optimizada
+rm -rf $IMG_DIR
+mv $OPTIMIZED_DIR $IMG_DIR
+
+# Generar index.html
+cat > index.html <<EOF
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DELTHA-TECH - Tecnología del Futuro</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      background: linear-gradient(270deg, #0f0f0f, #1c1c1c);
+      background-size: 400% 400%;
+      animation: backgroundScroll 15s ease infinite;
+    }
+    @keyframes backgroundScroll {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    header {
+      background: black;
+      padding: 1em;
+      text-align: center;
+      font-size: 2em;
+      color: cyan;
+      box-shadow: 0 0 20px cyan;
+    }
+    .btn-filter {
+      background: transparent;
+      border: 1px solid cyan;
+      color: cyan;
+      padding: 0.5em 1em;
+      margin: 0.2em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-filter:hover {
+      background: cyan;
+      color: black;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 1em;
+    }
+    .gallery img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border: 2px solid cyan;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.2);
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 2em;
+    }
+    .service-box {
+      border: 2px solid lime;
+      padding: 1em;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 0 15px lime;
+      transition: transform 0.3s ease;
+    }
+    .service-box:hover {
+      transform: translateY(-10px);
+    }
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      font-size: 2em;
+      line-height: 60px;
+      z-index: 999;
+      box-shadow: 0 0 20px #25D366;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-bubble {
+      position: fixed;
+      bottom: 95px;
+      right: 35px;
+      background: #25D366;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+      display: none;
+      font-size: 0.9em;
+    }
+    .floating-whatsapp:hover + .whatsapp-bubble {
+      display: block;
+    }
+    @keyframes pulse {
+      0% {transform: scale(1);}
+      50% {transform: scale(1.1);}
+      100% {transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+<header>
+  DELTHA-TECH - Tecnología del Futuro
+</header>
+
+<div style="text-align:center; margin:1em;">
+  <button class="btn-filter" onclick="filterGallery('all')">Todos</button>
+  <button class="btn-filter" onclick="filterGallery('Samsung')">Samsung</button>
+  <button class="btn-filter" onclick="filterGallery('Xiaomi')">Xiaomi</button>
+  <button class="btn-filter" onclick="filterGallery('iPhone')">iPhone</button>
+  <button class="btn-filter" onclick="filterGallery('Honor')">Honor</button>
+</div>
+
+<div class="gallery" id="gallery">
+EOF
+
+# Insertar automáticamente las imágenes en la galería
+for brand in Samsung Xiaomi iPhone Honor; do
+  for img in $IMG_DIR/$brand/*; do
+    echo "<img src=\"$img\" class=\"$brand\">" >> index.html
+  done
+done
+
+# Continuar HTML
+cat >> index.html <<EOF
+</div>
+
+<section class="services">
+  <div class="service-box">Cambio de Pantalla</div>
+  <div class="service-box">Cambio de Batería</div>
+  <div class="service-box">Análisis Forense</div>
+  <div class="service-box">Recuperación de Fotos</div>
+  <div class="service-box">Protección y Glass</div>
+</section>
+
+<a href="https://wa.me/51910763905" class="floating-whatsapp">W</a>
+<div class="whatsapp-bubble">¿Necesitas ayuda?</div>
+
+<script>
+  function filterGallery(category) {
+    const images = document.querySelectorAll('.gallery img');
+    images.forEach(img => {
+      img.style.display = (category === 'all' || img.classList.contains(category)) ? 'block' : 'none';
+    });
+  }
+</script>
+</body>
+</html>
+EOF
+
+# Subir cambios a GitHub
+git add .
+git commit -m "Actualización futurista con galería y efectos"
+git push
