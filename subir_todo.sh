@@ -1,3 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Instalar herramientas necesarias
+pkg update -y
+pkg install -y git imagemagick
+
+# Rutas internas de imágenes
+ORIGEN="/storage/emulated/0/Pictures/Gallery/owner"
+DESTINO="$HOME/deltha-tech.github.io/images"
+mkdir -p "$DESTINO"
+
+# Optimizar imágenes < 300KB
+echo "Optimizando imágenes..."
+
+find "$ORIGEN" -type f -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' | while read -r IMG; do
+    NOMBRE=$(basename "$IMG")
+    convert "$IMG" -resize 1080x1080 -strip -quality 85 "$DESTINO/$NOMBRE"
+    echo "Optimizado: $NOMBRE"
+done
+
+# Logo como favicon
+cp "$DESTINO/DELTHA-TECH logo.jpg" "$HOME/deltha-tech.github.io/favicon.ico"
+
+# Crear nuevo index futurista
+cat > "$HOME/deltha-tech.github.io/index.html" <<EOF
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -136,3 +161,10 @@
 
 </body>
 </html>
+EOF
+
+# Subir a GitHub
+cd "$HOME/deltha-tech.github.io"
+git add .
+git commit -m "Actualizando página futurista con imágenes optimizadas y logo"
+git push
