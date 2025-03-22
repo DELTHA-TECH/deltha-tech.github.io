@@ -1,3 +1,14 @@
+#!/bin/bash
+echo "[+] Iniciando sexta actualizaciÃ³n ultra futurista..."
+cp index.html index_backup_1742604543.html
+echo "[+] Respaldo de index.html creado como index_backup_1742604543.html"
+
+# Renombrar imÃ¡genes con espacios a guiones bajos
+echo "[+] Corrigiendo nombres de imÃ¡genes con espacios..."
+find images -depth -name "* *" -exec bash -c 'mv "$0" "${0// /_}"' {} \;
+
+# Crear index.html futurista
+cat <<EOF > index.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,3 +42,4 @@
   <section>
     <h2>Modelos y Marcas</h2>
     <div class="grid">
+EOF

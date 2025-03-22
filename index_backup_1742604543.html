@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DELTHA-TECH</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('logo_DELTHA-TECH/logo_dtfondo.png') no-repeat center center fixed;
+      background-size: 25%;
+      background-color: #0a0a0a;
+      color: white;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+    }
+    header img {
+      width: 180px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: cyan;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    .galeria, .servicios, .forense {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .galeria img, .servicios img, .forense img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #0ff;
+    }
+    .descripcion {
+      font-size: 0.9em;
+      text-align: center;
+      padding: 5px;
+      color: #ccc;
+    }
+    /* Botón de WhatsApp */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 35px;
+      box-shadow: 0 0 15px #25D366;
+      animation: rebote 1.5s infinite;
+      z-index: 999;
+    }
+    .whatsapp:hover::after {
+      content: "¿Necesitas ayuda?";
+      position: absolute;
+      bottom: 80px;
+      background: #25D366;
+      padding: 6px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    @keyframes rebote {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo_DELTHA-TECH/logo_dtfondo.png" alt="Logo DELTHA-TECH"/>
+  <h1>DELTHA-TECH</h1>
+  <p>Expertos en celulares, servicio técnico y análisis forense digital</p>
+</header>
+
+<section>
+  <h2>Modelos por Marca</h2>
+  <div class="galeria">
+    <!-- Agrega las imágenes de celulares -->
+    <!-- Ejemplo: -->
+    <div><img src="modelós_de_Samsung/s23_ultra.jpg"><div class="descripcion">Samsung S23 Ultra</div></div>
+    <div><img src="modelós_de_Xiaomi/xiaomi_13pro.jpg"><div class="descripcion">Xiaomi 13 Pro</div></div>
+    <div><img src="modelós_de_iPhone/iphone_15pro.jpg"><div class="descripcion">iPhone 15 Pro</div></div>
+    <div><img src="modelós_de_honor/honor_90.jpg"><div class="descripcion">Honor 90</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Servicio Técnico</h2>
+  <div class="servicios">
+    <div><img src="servicio_técnico/pantalla.jpg"><div class="descripcion">Cambio de pantalla</div></div>
+    <div><img src="servicio_técnico/bateria.jpg"><div class="descripcion">Cambio de batería</div></div>
+    <div><img src="servicio_técnico/placa.jpg"><div class="descripcion">Reparación de placas</div></div>
+    <div><img src="servicio_técnico/entrada.jpg"><div class="descripcion">Cambio de entrada</div></div>
+    <div><img src="servicio_técnico/flex.jpg"><div class="descripcion">Reparación de flex</div></div>
+    <div><img src="servicio_técnico/glass.jpg"><div class="descripcion">Cambio de glass</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Análisis Forense</h2>
+  <p>Recuperamos fotos, videos, documentos y datos importantes desde celulares y computadoras.</p>
+  <div class="forense">
+    <div><img src="análisis_forence/recuperacion1.jpg"><div class="descripcion">Recuperación de fotos</div></div>
+    <div><img src="análisis_forence/recuperacion2.jpg"><div class="descripcion">Recuperación de videos</div></div>
+    <div><img src="análisis_forence/recuperacion3.jpg"><div class="descripcion">Recuperación de documentos</div></div>
+  </div>
+</section>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/51910763905" class="whatsapp" target="_blank" title="Escríbenos al WhatsApp">✆</a>
+
+</body>
+</html>
