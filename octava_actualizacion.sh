@@ -1,3 +1,16 @@
+#!/bin/bash
+echo "[+] Iniciando OCTAVA actualización MEGA FUTURISTA de DELTHA-TECH..."
+
+# Paso 1: Respaldar index.html
+timestamp=$(date +%s)
+cp index.html index_backup_$timestamp.html
+echo "[+] Respaldo creado: index_backup_$timestamp.html"
+
+# Paso 2: Corregir nombres de imágenes con espacios
+find ./imagenes -depth -name "* *" -execdir bash -c 'mv "$1" "${1// /_}"' bash {} \;
+
+# Paso 3: Crear nuevo index futurista (HTML se genera automáticamente)
+cat > index.html <<EOF
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -81,7 +94,7 @@
     <h2>Servicio Técnico Especializado</h2>
     <p>Ofrecemos cambio de pantalla, batería, reparación de placas, flex, entrada de carga, instalación de protectores y más.</p>
     <div class="imagenes-servicios">
-      
+      $(find imagenes/servicio_técnico -type f -name '*.jpg' -or -name '*.png' -or -name '*.webp' | sort | sed 's|^|<img src="|;s|$|" alt="Servicio Técnico">|')
     </div>
   </section>
 
@@ -90,7 +103,7 @@
     <h2>Análisis Forense</h2>
     <p>Recuperamos fotos, videos, documentos y realizamos análisis profesionales en celulares y computadoras.</p>
     <div class="imagenes-forense">
-      
+      $(find imagenes/análisis_forence -type f -name '*.jpg' -or -name '*.png' -or -name '*.webp' | sort | sed 's|^|<img src="|;s|$|" alt="Análisis Forense">|')
     </div>
   </section>
 
@@ -101,3 +114,10 @@
 
 </body>
 </html>
+EOF
+
+echo "[+] index.html actualizado con logos, modelos, servicios y efectos futuristas."
+
+# Paso 4: Confirmación
+echo "[+] Puedes revisar los cambios en: https://deltha-tech.github.io"
+echo "[+] No olvides hacer git add, commit y push para que se actualice en línea."
