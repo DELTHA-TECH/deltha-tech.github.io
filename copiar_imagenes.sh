@@ -59,3 +59,34 @@ copiar_imagenes "servicio técnico" "servicio_tecnico"
 copiar_imagenes "análisis forence " "analisis_forense"
 
 echo "[✓] Copia completada. Verifica las imágenes en la carpeta ./imagenes/"
+#!/bin/bash
+echo "¡Imágenes copiadas con éxito!"
+echo "[+] Iniciando copia automática de imágenes desde la galería..."
+
+# Rutas corregidas con espacios y tildes
+declare -A carpetas=(
+    ["iPhone"]="modelós de iPhone "
+    ["Xiaomi"]="modelós de Xiaomi "
+    ["Honor"]="modelós de honor "
+    ["Samsung"]="modelós de Samsung "
+    ["Logos"]="logo de marcas "
+    ["logos_empresa"]="logo DELTHA-TECH"
+    ["ServicioTecnico"]="servicio técnico "
+    ["analisis_forense"]="análisis forence "
+)
+
+# Crear carpetas destino
+mkdir -p imagenes/{iPhone,Xiaomi,Honor,Samsung,Logos,logos_empresa,ServicioTecnico,analisis_forense}
+
+# Copiar imágenes
+for destino in "${!carpetas[@]}"; do
+    origen="/data/data/com.termux/files/home/storage/shared/Pictures/Gallery/owner/${carpetas[$destino]}"
+    if [ -d "$origen" ]; then
+        cp "$origen"* "imagenes/$destino/"
+        echo "[+] Imágenes copiadas de '${carpetas[$destino]}' a '$destino'"
+    else
+        echo "[!] Error al copiar imágenes desde '${carpetas[$destino]}'"
+    fi
+done
+
+echo "[✓] Copia completada. Verifica las imágenes en la carpeta ./imagenes/"
