@@ -1,3 +1,11 @@
+#!/bin/bash
+
+echo "[+] Realizando respaldo del index actual..."
+cp index.html index_backup_$(date +%s).html
+
+echo "[+] Generando diseño futurista completo en index.html..."
+
+cat <<EOF > index.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -129,10 +137,11 @@
   <section id="productos">
     <h2>Productos por Marca</h2>
     <div class="galeria">
-      <img src="$img" alt="Producto">
-<img src="$img" alt="Producto">
-<img src="$img" alt="Producto">
-<img src="$img" alt="Producto">
+      $(for dir in imagenes/Samsung imagenes/Xiaomi imagenes/Honor imagenes/iPhone; do
+        for img in \$dir/*; do
+          echo "<img src=\"\$img\" alt=\"Producto\">"
+        done
+      done)
     </div>
   </section>
 
@@ -140,7 +149,9 @@
     <h2>Servicios Técnicos</h2>
     <p>Ofrecemos cambio de pantalla, batería, conector, flex, protector, y reparación de placas.</p>
     <div class="galeria">
-      <img src="$img" alt="Servicio Técnico">
+      $(for img in imagenes/servicio_tecnico/*; do
+        echo "<img src=\"\$img\" alt=\"Servicio Técnico\">"
+      done)
     </div>
   </section>
 
@@ -148,8 +159,9 @@
     <h2>Análisis Forense</h2>
     <p>Recuperamos fotos, videos y documentos desde celulares y computadoras dañadas o formateadas.</p>
     <div class="galeria">
-      <img src="$img" alt="Análisis Forense">
-<img src="$img" alt="Análisis Forense">
+      $(for img in imagenes/analisis_forense/*; do
+        echo "<img src=\"\$img\" alt=\"Análisis Forense\">"
+      done)
     </div>
   </section>
 
@@ -165,3 +177,6 @@
 
 </body>
 </html>
+EOF
+
+echo "[✓] Página futurista generada correctamente como index.html"
