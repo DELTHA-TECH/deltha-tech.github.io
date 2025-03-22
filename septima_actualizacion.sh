@@ -1,3 +1,17 @@
+#!/bin/bash
+echo "[+] Iniciando séptima actualización ultra profesional y futurista..."
+
+# Respaldo del index actual
+timestamp=$(date +%s)
+cp index.html index_backup_$timestamp.html
+echo "[+] Respaldo creado como index_backup_$timestamp.html"
+
+# Corrige nombres con espacios en imágenes
+echo "[+] Corrigiendo nombres de imágenes con espacios..."
+find ./images -depth -name "* *" -exec bash -c 'mv "$0" "${0// /_}"' {} \;
+
+# Crear nuevo index futurista con TODO lo solicitado
+cat > index.html << 'HTML'
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -148,3 +162,9 @@
 
 </body>
 </html>
+HTML
+
+echo "[+] HTML futurista creado con éxito y actualizado."
+
+# Finaliza
+echo "[+] Ejecuta ahora: git add . && git commit -m 'Séptima actualización: correcciones totales y mejoras futuristas' && git push"
