@@ -115,8 +115,18 @@
 <link rel="stylesheet" href="efectos_v5.css">
 <link rel="stylesheet" href="intro_futurista.css">
 <link rel="stylesheet" href="intro_futurista.css">
+<link rel="stylesheet" href="intro_futurista.css">
 </head>
 <body>
+<div id="intro-container">
+  <canvas id="particles"></canvas>
+  <audio id="intro-sound" autoplay>
+    <source src="intro_sound.mp3" type="audio/mpeg">
+  </audio>
+  <div class="glitch-text">
+    <span class="typed-text">Bienvenido a DELTHA-TECH</span>
+  </div>
+</div>
 <div id="intro-container">
   <audio id="intro-sound" autoplay>
     <source src="intro_sound.mp3" type="audio/mpeg">
@@ -195,6 +205,7 @@
 </section>
 <button id="btn-idioma" onclick="cambiarIdioma()">EN / ES</button>
 <script src="traducir.js"></script>
+<script src="intro_futurista.js"></script>
 <script src="intro_futurista.js"></script>
 <script src="intro_futurista.js"></script>
 </body>
