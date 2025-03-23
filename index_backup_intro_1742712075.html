@@ -1,14 +1,7 @@
-#!/bin/bash
-
-echo "[+] Realizando respaldo del index actual..."
-cp index.html index_backup_$(date +%s).html
-
-echo "[+] Generando diseño futurista completo en index.html..."
-
-cat <<EOF > index.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="stylesheet" href="estilo_futurista.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DELTHA-TECH</title>
@@ -118,14 +111,35 @@ cat <<EOF > index.html
       50% { transform: translateY(-8px); }
     }
   </style>
+<link rel="stylesheet" href="mejoras_v4.css">
+<link rel="stylesheet" href="efectos_v5.css">
+<link rel="stylesheet" href="intro_futurista.css">
+<link rel="stylesheet" href="intro_futurista.css">
 </head>
 <body>
+<div id="intro-container">
+  <audio id="intro-sound" autoplay>
+    <source src="intro_sound.mp3" type="audio/mpeg">
+  </audio>
+  <div class="glitch-text">
+    <span class="typed-text">Bienvenido a DELTHA-TECH</span>
+  </div>
+</div>
+<div id="intro-container">
+  <div class="glitch-text">
+    <span class="typed-text">Bienvenido a DELTHA-TECH</span>
+  </div>
+</div>
 
   <header>
     <img src="imagenes/DELTHA-TECH_logo.jpg" alt="DELTHA-TECH">
     <h1>Bienvenido a DELTHA-TECH</h1>
     <p>Expertos en celulares, servicio técnico y análisis forense</p>
   </header>
+<section class="intro">
+  <h2><span data-es="Bienvenidos a DELTHA-TECH" data-en="Welcome to DELTHA-TECH">Bienvenidos a DELTHA-TECH</span></h2>
+  <p>Expertos en celulares Samsung, iPhone, Xiaomi y Honor. Servicios técnicos, análisis forense y recuperación de datos rápidos y seguros.</p>
+</section>
 
   <nav>
     <a href="#productos">Productos</a>
@@ -137,11 +151,10 @@ cat <<EOF > index.html
   <section id="productos">
     <h2>Productos por Marca</h2>
     <div class="galeria">
-      $(for dir in imagenes/Samsung imagenes/Xiaomi imagenes/Honor imagenes/iPhone; do
-        for img in \$dir/*; do
-          echo "<img src=\"\$img\" alt=\"Producto\">"
-        done
-      done)
+      <img src="imagenes/Samsung/samsung1.jpg" alt="Samsung Galaxy">
+<img src="imagenes/Xiaomi/xiaomi1.jpg" alt="Xiaomi Note">
+<img src="imagenes/Honor/honor1.jpg" alt="Honor X9">
+<img src="imagenes/iPhone/iphone1.jpg" alt="iPhone 15">
     </div>
   </section>
 
@@ -149,9 +162,7 @@ cat <<EOF > index.html
     <h2>Servicios Técnicos</h2>
     <p>Ofrecemos cambio de pantalla, batería, conector, flex, protector, y reparación de placas.</p>
     <div class="galeria">
-      $(for img in imagenes/servicio_tecnico/*; do
-        echo "<img src=\"\$img\" alt=\"Servicio Técnico\">"
-      done)
+      <img src="imagenes/ServicioTecnico/servicio1.jpg" alt="Cambio de pantalla">
     </div>
   </section>
 
@@ -159,9 +170,8 @@ cat <<EOF > index.html
     <h2>Análisis Forense</h2>
     <p>Recuperamos fotos, videos y documentos desde celulares y computadoras dañadas o formateadas.</p>
     <div class="galeria">
-      $(for img in imagenes/analisis_forense/*; do
-        echo "<img src=\"\$img\" alt=\"Análisis Forense\">"
-      done)
+      <img src="imagenes/analisis_forense/forense1.jpg" alt="Recuperación de fotos y videos">
+<img src="$img" alt="Análisis Forense">
     </div>
   </section>
 
@@ -175,25 +185,17 @@ cat <<EOF > index.html
   <a class="whatsapp-btn" href="https://wa.me/51910763905" target="_blank">W</a>
   <div class="whatsapp-msg">¿Necesitas ayuda?</div>
 
+<a id="whatsapp-button" href="https://wa.me/51910763905" target="_blank">W</a>
+<section class="contacto">
+  <h2><span data-es="Contáctanos" data-en="Contact us">Contáctanos</span></h2>
+  <p><strong>WhatsApp:</strong> <a href="https://wa.me/51910763905">910 763 905</a> / <a href="https://wa.me/51987180885">987 180 885</a></p>
+  <p><strong>Email:</strong> contacto@deltha-tech.com</p>
+  <p><strong>Ubicación:</strong> Av. Tecnología 123, Lima, Perú</p>
+  <iframe src="https://maps.google.com/maps?q=lima&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0;"></iframe>
+</section>
+<button id="btn-idioma" onclick="cambiarIdioma()">EN / ES</button>
+<script src="traducir.js"></script>
+<script src="intro_futurista.js"></script>
+<script src="intro_futurista.js"></script>
 </body>
 </html>
-EOF
-
-echo "[✓] Página futurista generada correctamente como index.html"
-#!/bin/bash
-
-echo "Aplicando diseño futurista y mejorando sitio DELTHA-TECH..."
-
-pkg install -y git imagemagick optipng
-
-bash optimizar_y_limpiar_imgs.sh
-
-# Aquí iría la regeneración del index futurista con galería, animaciones, botón de idioma, etc.
-# Si quieres, te lo vuelvo a poner listo.
-
-cd ~/deltha-tech.github.io || exit
-git add .
-git commit -m "Futurización avanzada con optimización automática"
-git push
-
-echo "Sitio web futurizado, imágenes optimizadas y cambios subidos a GitHub exitosamente."

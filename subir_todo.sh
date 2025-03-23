@@ -168,3 +168,21 @@ cd "$HOME/deltha-tech.github.io"
 git add .
 git commit -m "Actualizando página futurista con imágenes optimizadas y logo"
 git push
+#!/bin/bash
+
+echo "Subiendo todos los archivos al repositorio..."
+
+pkg install -y git imagemagick optipng
+
+bash optimizar_y_limpiar_imgs.sh
+
+cp -r * ~/deltha-tech.github.io/
+
+cd ~/deltha-tech.github.io || exit
+
+git add .
+fecha=$(date "+%Y-%m-%d %H:%M")
+git commit -m "Actualización automática - $fecha"
+git push
+
+echo "¡Sitio web actualizado y subido exitosamente!"
