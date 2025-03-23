@@ -1,0 +1,26 @@
+.intro, .contacto {
+  padding: 40px 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  margin: 20px;
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+#btn-idioma {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  padding: 10px 15px;
+  background: #00f0ff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00f0ff;
+  z-index: 999;
+}
+#btn-idioma:hover {
+  background: #fff;
+  color: #000;
+}
