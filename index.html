@@ -2,168 +2,137 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DELTHA-TECH</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Orbitron', sans-serif;
-      color: #00fff7;
-      background: linear-gradient(to right, #000000, #0f0f0f);
-      background-attachment: fixed;
-      overflow-x: hidden;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/DELTHA-TECH logo.jpg') no-repeat center center fixed;
+      background-size: contain;
+      background-blend-mode: soft-light;
+      background-color: #0c0c0c;
+      color: white;
     }
     header {
       text-align: center;
-      padding: 40px 10px 10px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 2rem;
     }
     header img {
-      max-width: 200px;
-      animation: pulse 3s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.9; }
-      50% { transform: scale(1.05); opacity: 1; }
-    }
-    h1 {
-      font-size: 2.2rem;
-      margin-top: 10px;
-      color: #00fff7;
-      text-shadow: 0 0 8px #00fff7;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      background: rgba(255,255,255,0.05);
-      padding: 15px;
-      margin-bottom: 20px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 15px;
-      border: 1px solid #00fff7;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      background-color: #00fff7;
-      color: #000;
-      box-shadow: 0 0 15px #00fff7;
+      max-width: 300px;
+      filter: drop-shadow(0 0 15px cyan);
     }
     section {
-      padding: 30px 20px;
+      padding: 2rem;
     }
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
+    h2 {
+      border-left: 4px solid cyan;
+      padding-left: 1rem;
+      color: cyan;
     }
     .galeria img {
-      width: 180px;
-      height: auto;
-      border: 2px solid #00fff7;
+      width: 150px;
+      margin: 10px;
+      border: 2px solid cyan;
       border-radius: 10px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transition: 0.3s;
     }
     .galeria img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #00fff7;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px cyan;
     }
     .whatsapp-btn {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #25d366;
+      background: #25d366;
       color: white;
       padding: 15px;
       border-radius: 50%;
-      font-size: 22px;
-      text-align: center;
-      box-shadow: 0 0 15px #00ffae;
-      animation: bounce 2s infinite;
-      z-index: 999;
-    }
-    .whatsapp-msg {
-      display: none;
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      background: #00fff7;
-      color: #000;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-size: 14px;
-      z-index: 998;
-    }
-    .whatsapp-btn:hover + .whatsapp-msg {
-      display: block;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 0 10px #25d366;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="imagenes/DELTHA-TECH_logo.jpg" alt="DELTHA-TECH">
-    <h1>Bienvenido a DELTHA-TECH</h1>
-    <p>Expertos en celulares, servicio técnico y análisis forense</p>
-  </header>
+<header>
+  <img src="images/Logo DELTHA-TECH.jpg" alt="DELTHA-TECH Logo">
+  <h1>Bienvenido a DELTHA-TECH</h1>
+  <p>Tu tienda y servicio técnico futurista</p>
+</header>
 
-  <nav>
-    <a href="#productos">Productos</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#forense">Análisis Forense</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+<section>
+  <h2>Productos Samsung</h2>
+  <div class="galeria">
+    <img src="images/A05.png">
+    <img src="images/A06.jpg">
+    <img src="images/A16.png">
+    <img src="images/A25.png">
+    <img src="images/A35.jpg">
+    <img src="images/A55 .png">
+    <img src="images/S24 ultra.jpg">
+  </div>
+</section>
 
-  <section id="productos">
-    <h2>Productos por Marca</h2>
-    <div class="galeria">
-      <img src="$img" alt="Producto">
-<img src="$img" alt="Producto">
-<img src="$img" alt="Producto">
-<img src="$img" alt="Producto">
-    </div>
-  </section>
+<section>
+  <h2>Productos Xiaomi</h2>
+  <div class="galeria">
+    <img src="images/13 4g.webp">
+    <img src="images/14c.jpg">
+    <img src="images/A3 x.jpg">
+    <img src="images/A3.jpg">
+    <img src="images/Note 13 pro plus.jpg">
+    <img src="images/Note 13.png">
+    <img src="images/Note 14.png">
+  </div>
+</section>
 
-  <section id="servicios">
-    <h2>Servicios Técnicos</h2>
-    <p>Ofrecemos cambio de pantalla, batería, conector, flex, protector, y reparación de placas.</p>
-    <div class="galeria">
-      <img src="$img" alt="Servicio Técnico">
-    </div>
-  </section>
+<section>
+  <h2>Productos Honor</h2>
+  <div class="galeria">
+    <img src="images/Magic 7 Lite.webp">
+    <img src="images/Play 9A.jpg">
+    <img src="images/X 6b.jpg">
+    <img src="images/X 7b.jpg">
+    <img src="images/X 8c.png">
+  </div>
+</section>
 
-  <section id="forense">
-    <h2>Análisis Forense</h2>
-    <p>Recuperamos fotos, videos y documentos desde celulares y computadoras dañadas o formateadas.</p>
-    <div class="galeria">
-      <img src="$img" alt="Análisis Forense">
-<img src="$img" alt="Análisis Forense">
-<img src="$img" alt="Análisis Forense">
-<img src="$img" alt="Análisis Forense">
-    </div>
-  </section>
+<section>
+  <h2>Productos iPhone</h2>
+  <div class="galeria">
+    <img src="images/13.webp">
+    <img src="images/15 pro max.png">
+    <img src="images/15.png">
+    <img src="images/16 pro max.jpg">
+    <img src="images/16.jpg">
+  </div>
+</section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>WhatsApp: 910-763-905 / 987-180-885</p>
-    <p>Email: contacto@deltha-tech.com</p>
-    <p>Ubicación: Lima, Perú</p>
-  </section>
+<section>
+  <h2>Servicios Técnicos</h2>
+  <div class="galeria">
+    <img src="images/Cambio de batería.jpg">
+    <img src="images/Cambio de entrada.jpg">
+    <img src="images/Cambio de glas.jpg">
+    <img src="images/Cambio de pantalla.jpg">
+    <img src="images/Reparación de placas.jpg">
+  </div>
+</section>
 
-  <a class="whatsapp-btn" href="https://wa.me/51910763905" target="_blank">W</a>
-  <div class="whatsapp-msg">¿Necesitas ayuda?</div>
+<section>
+  <h2>Análisis Forense</h2>
+  <p>Recuperamos fotos, videos, documentos y datos eliminados de celulares y computadoras.</p>
+  <div class="galeria">
+    <img src="images/Recuperación de información 1.png">
+    <img src="images/Recuperación de información 2.png">
+  </div>
+</section>
+
+<a class="whatsapp-btn" href="https://wa.me/51910763905" target="_blank">W</a>
 
 </body>
 </html>
