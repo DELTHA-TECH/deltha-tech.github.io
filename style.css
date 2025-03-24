@@ -1,0 +1,67 @@
+body {
+  margin: 0; font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #000000, #0f0f1f);
+  color: white; overflow-x: hidden;
+}
+header.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem; text-align: center;
+}
+.logo-principal {
+  width: 120px; border-radius: 50%;
+}
+h1, h2 {
+  text-shadow: 0 0 5px #0ff;
+}
+.filtros button {
+  background: none; border: 1px solid #0ff; color: #0ff;
+  margin: 0.2rem; padding: 0.5rem 1rem; border-radius: 5px;
+}
+.filtros button:hover {
+  background: #0ff; color: black;
+}
+.galeria {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 1rem; padding: 1rem;
+}
+.galeria img, figure {
+  width: 160px; border: 2px solid #0ff; border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+figure figcaption {
+  text-align: center; margin-top: 0.5rem; font-size: 0.9rem;
+}
+.galeria img:hover {
+  transform: scale(1.05); box-shadow: 0 0 20px #0ff;
+}
+.language-toggle {
+  margin-top: 1rem;
+}
+.language-toggle button {
+  background: black; color: #0ff;
+  border: 1px solid #0ff; padding: 0.5rem 1rem;
+}
+.whatsapp-float {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #25D366; border-radius: 50%;
+  width: 60px; height: 60px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 20px #25D366; animation: pulse 2s infinite;
+}
+.whatsapp-float img {
+  width: 30px;
+}
+.tooltip {
+  position: absolute; bottom: 70px; background: #0ff;
+  color: black; padding: 5px 10px; border-radius: 5px;
+  font-size: 0.8rem; display: none;
+}
+.whatsapp-float:hover .tooltip {
+  display: block;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px #25D366; }
+  50% { box-shadow: 0 0 20px #25D366; }
+  100% { box-shadow: 0 0 5px #25D366; }
+}
