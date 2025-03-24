@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DELTHA-TECH | Tecnología y Servicios Futuristas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+  <div class="fondo-animado"></div>
+
+  <header>
+    <img src="logo/DELTHA-TECH logo.jpg" alt="Logo DELTHA-TECH" class="logo-central">
+    <h1 class="titulo">Bienvenido a DELTHA-TECH</h1>
+    <p class="intro">Especialistas en venta de celulares Samsung, Xiaomi, Honor, iPhone, análisis forense y servicio técnico profesional.</p>
+  </header>
+
+  <nav class="menu-glass">
+    <button onclick="cambiarIdioma('es')">ES</button>
+    <button onclick="cambiarIdioma('en')">EN</button>
+  </nav>
+
+  <section id="galeria" class="galeria-productos">
+    <h2>Productos</h2>
+    <div class="filtros">
+      <button onclick="filtrar('samsung')"><img src="logos_marcas/Logo Samsung.jpg" alt="Samsung"></button>
+      <button onclick="filtrar('xiaomi')"><img src="logos_marcas/Logo Xiaomi.jpg" alt="Xiaomi"></button>
+      <button onclick="filtrar('honor')"><img src="logos_marcas/Logo Honor.jpg" alt="Honor"></button>
+      <button onclick="filtrar('iphone')"><img src="logos_marcas/Logo iPhone.jpg" alt="iPhone"></button>
+    </div>
+    <div class="productos">
+<img src="productos/samsung/A05.png" alt="A05.png" class="producto samsung">
+<img src="productos/samsung/A06.jpg" alt="A06.jpg" class="producto samsung">
+<img src="productos/samsung/A16.png" alt="A16.png" class="producto samsung">
+<img src="productos/samsung/A25.png" alt="A25.png" class="producto samsung">
+<img src="productos/samsung/A35.jpg" alt="A35.jpg" class="producto samsung">
+<img src="productos/samsung/A55 .png" alt="A55 .png" class="producto samsung">
+<img src="productos/samsung/S24 ultra.jpg" alt="S24 ultra.jpg" class="producto samsung">
+<img src="productos/xiaomi/13 4g.webp" alt="13 4g.webp" class="producto xiaomi">
+<img src="productos/xiaomi/14c.jpg" alt="14c.jpg" class="producto xiaomi">
+<img src="productos/xiaomi/A3 x.jpg" alt="A3 x.jpg" class="producto xiaomi">
+<img src="productos/xiaomi/A3.jpg" alt="A3.jpg" class="producto xiaomi">
+<img src="productos/xiaomi/Note 13 pro plus.jpg" alt="Note 13 pro plus.jpg" class="producto xiaomi">
+<img src="productos/xiaomi/Note 13.png" alt="Note 13.png" class="producto xiaomi">
+<img src="productos/xiaomi/Note 14.png" alt="Note 14.png" class="producto xiaomi">
+<img src="productos/honor/Magic 7 Lite.webp" alt="Magic 7 Lite.webp" class="producto honor">
+<img src="productos/honor/Play 9A.jpg" alt="Play 9A.jpg" class="producto honor">
+<img src="productos/honor/X 6b.jpg" alt="X 6b.jpg" class="producto honor">
+<img src="productos/honor/X 7b.jpg" alt="X 7b.jpg" class="producto honor">
+<img src="productos/honor/X 8c.png" alt="X 8c.png" class="producto honor">
+<img src="productos/iphone/13.webp" alt="13.webp" class="producto iphone">
+<img src="productos/iphone/15 pro max.png" alt="15 pro max.png" class="producto iphone">
+<img src="productos/iphone/15.png" alt="15.png" class="producto iphone">
+<img src="productos/iphone/16 pro max.jpg" alt="16 pro max.jpg" class="producto iphone">
+<img src="productos/iphone/16.jpg" alt="16.jpg" class="producto iphone">
+    </div>
+  </section>
+
+  <section class="servicio-tecnico">
+    <h2>Servicio Técnico Especializado</h2>
+    <p>Realizamos cambio de pantalla, batería, glass, entrada, flex, placas, y más.</p>
+    <div class="imagenes-servicio">
+<figure><img src="servicio_tecnico/Cambio de batería.jpg" alt="Cambio de batería.jpg"><figcaption>Cambio de batería.jpg</figcaption></figure>
+<figure><img src="servicio_tecnico/Cambio de entrada.jpg" alt="Cambio de entrada.jpg"><figcaption>Cambio de entrada.jpg</figcaption></figure>
+<figure><img src="servicio_tecnico/Cambio de glas.jpg" alt="Cambio de glas.jpg"><figcaption>Cambio de glas.jpg</figcaption></figure>
+<figure><img src="servicio_tecnico/Cambio de pantalla.jpg" alt="Cambio de pantalla.jpg"><figcaption>Cambio de pantalla.jpg</figcaption></figure>
+<figure><img src="servicio_tecnico/Reparación de placas.jpg" alt="Reparación de placas.jpg"><figcaption>Reparación de placas.jpg</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="analisis-forense">
+    <h2>Análisis Forense y Recuperación de Datos</h2>
+    <p>Recuperamos fotos, videos y documentos de celulares y computadoras.</p>
+    <div class="imagenes-analisis">
+<figure><img src="analisis_forense/Recuperación de información 1.png" alt="Recuperación de información 1.png"><figcaption>Recuperación de información 1.png</figcaption></figure>
+<figure><img src="analisis_forense/Recuperación de información 2.png" alt="Recuperación de información 2.png"><figcaption>Recuperación de información 2.png</figcaption></figure>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Contáctanos</h3>
+    <p>WhatsApp: <a href="https://wa.me/51910763905">910-763-905</a> / <a href="https://wa.me/51987180885">987-180-885</a></p>
+    <p>Correo: contacto@deltha-tech.com</p>
+    <p>Ubicación: Perú</p>
+  </footer>
+
+  <div class="whatsapp-boton" onclick="window.open('https://wa.me/51910763905','_blank')">
+    <div class="mensaje-hover">¿Necesitas ayuda?</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
